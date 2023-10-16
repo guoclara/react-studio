@@ -1,0 +1,15 @@
+---
+apiVersion: fastlane.disco-api.com/v1alpha1
+kind: HelmReleaseValues
+metadata:
+  name: labs-perf-testing-bolt-api-us-east-1-dev-1-v1
+  labels:
+    scaling-group: phase-2
+spec:
+  paused: true
+  selector:
+    microserviceRef: labs-perf-testing
+    environmentRef: bolt-api-us-east-1-dev-1-v1
+  values:
+    autoscaling:
+      minReplicas: 2
