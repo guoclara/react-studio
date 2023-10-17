@@ -1,2 +1,2 @@
-./github/CODEOWNERS @mlui-discovery
+* @mlui-discovery
 overrides/sre/*/*/labs/*/ @mlui-discovery
