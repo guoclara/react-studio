@@ -1,2 +1,3 @@
 * @mlui-discovery
+overrides/sre/*/*/lightning-bird/*/ @guoclara
 overrides/sre/*/*/labs/*/ @mlui-discovery
