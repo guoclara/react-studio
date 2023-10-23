@@ -14,12 +14,12 @@ jobs:
         run: echo "hello"
   second:
     runs-on: ubuntu-latest
-    needs: test
+    needs: first
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: second
-        if: ${{ !cancelled() && needs.test.result == 'failure' && vars.CANARY_ROLLBACK == 'true' }}
+        if: ${{ !cancelled() && needs.fiirst.result == 'failure' && vars.CANARY_ROLLBACK == 'true' }}
         id: result
         run: echo "world"
 
