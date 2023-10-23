@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: second
-        if: ${{ !cancelled() && needs.first.result == 'failure' && vars.CANARY_ROLLBACK == 'true' }}
+        if: ${{ !cancelled() && vars.CANARY_ROLLBACK == 'true' }}
         id: result
         run: echo "world"
 
