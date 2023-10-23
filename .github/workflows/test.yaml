@@ -1,0 +1,26 @@
+name: test
+on: workflow_dispatch
+
+# FOR THIS WORKFLOW TO RUN PROPERLY, MOVE IT TO THE .github/workflows DIRECTORY
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: test
+        id: test
+        run: echo "hello"
+  second:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: second
+        if: ${{ !cancelled() && needs.test.result == 'failure' && vars.CANARY_ROLLBACK == 'true' }}
+        id: result
+        run: echo "world"
+
+     
