@@ -11,7 +11,9 @@ jobs:
 
       - name: test
         id: test
-        run: echo "hello"
+        run: |
+          sleep 4
+          echo "hello"
   second:
     runs-on: ubuntu-latest
     needs: first
