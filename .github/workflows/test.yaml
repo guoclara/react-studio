@@ -15,7 +15,7 @@ jobs:
           echo "version_rollback=$version_rollback" | tee -a $GITHUB_OUTPUT 
 
       - name: Send rollback event to "DiscoPipeline Events"
-        if: steps.get-rollback-version.outputs.version_rollback != ""
+        if: steps.get-rollback-version.outputs.version_rollback != ''
         run: echo "hello"
 
 
